@@ -1,7 +1,4 @@
 "use strict"
-let a = 1;
-let b = 5;
-let c = 4;
 function solveEquation(a, b, c) {
   let arr = [];
   let d = b ** 2 - 4 * a * c;
@@ -15,6 +12,7 @@ function solveEquation(a, b, c) {
   };
   return arr;
 }
+solveEquation(1, 5, 4);
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
