@@ -14,11 +14,24 @@ function solveEquation(a, b, c) {
   } else {
     console.log('На ноль делить НЕЛЬЗЯ!');
   };
-
   return arr;
 }
 solveEquation(1, 5, 4);
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
-}
+function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+  for (let i = 0; i < arguments.length; i++) {
+    if (isNaN(arguments[i]) === true) {
+      console.log('Ошибка данных. Данные должны быть числом!');
+      return 0;
+    };
+  };
+  p = (percent / 100) / 12;
+  s = amount - contribution;
+  paymant = s * (p + (p / (((1 + p) ** countMonths) - 1)));
+  total = paymant * countMonths;
+  sumPaymant = total.toFixed(2);
+  monthPaymant = paymant.toFixed(2);
+  console.log(`Ежемесячный платеж составит ${monthPaymant} рублей \n Итого будетзаплачено за ${countMonths} месяцев ${sumPaymant} рублей`);
+};
+calculateTotalMortgage("jhg", 0, 50000, 12)
