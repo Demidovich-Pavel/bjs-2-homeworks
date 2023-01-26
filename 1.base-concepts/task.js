@@ -30,8 +30,9 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   s = amount - contribution;
   paymant = s * (p + (p / (((1 + p) ** countMonths) - 1)));
   total = paymant * countMonths;
-  sumPaymant = total.toFixed(2);
-  monthPaymant = paymant.toFixed(2);
+  sumPaymant = Number(total.toFixed(2));
+  monthPaymant = Number(paymant.toFixed(2));
   console.log(`Ежемесячный платеж составит ${monthPaymant} рублей \n Итого будетзаплачено за ${countMonths} месяцев ${sumPaymant} рублей`);
+  return monthPaymant;
 };
-calculateTotalMortgage("jhg", 0, 50000, 12)
+calculateTotalMortgage(10, 0, 50000, 12)
