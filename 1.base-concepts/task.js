@@ -25,7 +25,7 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   if (isNaN(percent) === true || isNaN(contribution) === true || isNaN(amount) === true || isNaN(countMonths) === true) {
     console.log('Ошибка данных. Данные должны быть числом!');
-    return 0;
+    return false;
   };
   p = (percent / 100) / 12;
   s = amount - contribution;
@@ -34,7 +34,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   sumPaymant = Number(total.toFixed(2));
   monthPaymant = Number(paymant.toFixed(2));
   console.log(`Ежемесячный платеж составит ${monthPaymant} рублей \n Итого будетзаплачено за ${countMonths} месяцев ${sumPaymant} рублей`);
-  return monthPaymant;
+  return sumPaymant;
 };
 
 
