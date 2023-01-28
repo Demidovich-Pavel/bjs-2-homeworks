@@ -27,12 +27,12 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     console.log('Ошибка данных. Данные должны быть числом!');
     return false;
   };
-  p = (percent / 100) / 12;
-  s = amount - contribution;
-  paymant = s * (p + (p / (((1 + p) ** countMonths) - 1)));
-  total = paymant * countMonths;
-  sumPaymant = Number(total.toFixed(2));
-  monthPaymant = Number(paymant.toFixed(2));
+  let p = (percent / 100) / 12;
+  let s = amount - contribution;
+  let paymant = s * (p + (p / (((1 + p) ** countMonths) - 1)));
+  let total = paymant * countMonths;
+  let sumPaymant = Number(total.toFixed(2));
+  let monthPaymant = Number(paymant.toFixed(2));
   console.log(`Ежемесячный платеж составит ${monthPaymant} рублей \n Итого будетзаплачено за ${countMonths} месяцев ${sumPaymant} рублей`);
   return sumPaymant;
 };
