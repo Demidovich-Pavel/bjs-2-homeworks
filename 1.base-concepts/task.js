@@ -4,27 +4,28 @@ function solveEquation(a, b, c) {
   let d = b ** 2 - 4 * a * c;
   if (a !== 0) {
     if (d > 0) {
-      x1 = (-b + Math.sqrt(d)) / (2 * a);
-      x2 = (-b - Math.sqrt(d)) / (2 * a);
+      let x1 = (-b + Math.sqrt(d)) / (2 * a);
+      let x2 = (-b - Math.sqrt(d)) / (2 * a);
       arr.push(x1, x2);
+      console.log(arr);
     } else if (d === 0) {
-      x = -b / (2 * a);
+      let x = -b / (2 * a);
       arr.push(x);
+      console.log(arr);
     };
   } else {
     console.log('На ноль делить НЕЛЬЗЯ!');
   };
+  console.log(arr);
   return arr;
 }
-solveEquation(1, 5, 4);
+
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  for (let i = 0; i < arguments.length; i++) {
-    if (isNaN(arguments[i]) === true) {
-      console.log('Ошибка данных. Данные должны быть числом!');
-      return 0;
-    };
+  if (isNaN(percent) === true || isNaN(contribution) === true || isNaN(amount) === true || isNaN(countMonths) === true) {
+    console.log('Ошибка данных. Данные должны быть числом!');
+    return 0;
   };
   p = (percent / 100) / 12;
   s = amount - contribution;
@@ -35,4 +36,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   console.log(`Ежемесячный платеж составит ${monthPaymant} рублей \n Итого будетзаплачено за ${countMonths} месяцев ${sumPaymant} рублей`);
   return monthPaymant;
 };
-calculateTotalMortgage(10, 0, 50000, 12)
+
+
