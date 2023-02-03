@@ -104,3 +104,4 @@ function makeWork(arrOfArr, func) {
   console.log(maxWorkerResult);
   return maxWorkerResult
 }
+
