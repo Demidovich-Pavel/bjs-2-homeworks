@@ -17,14 +17,14 @@ Student.prototype.setSubject = function (subjectName) {
 Student.prototype.addMarks = function (...marks) {
     if (this.marks) {
         this.marks.push(...marks);
+    } else {
+        return 0;
     }
 }
 
 Student.prototype.getAverage = function () {
-    if ('marks' in new Student && this.marks.length > 0) {
-        let sum = this.marks.reduce((acc, item) => acc + item, 0);
-        let averageMark = sum / this.marks.length;
-        return averageMark
+    if (this.marks && this.marks.length != 0) {
+        return this.marks.reduce((acc, item) => acc + item, 0) / this.marks.length;
     } else {
         return 0
     }
