@@ -1,5 +1,5 @@
 class PrintEditionItem {
-    constructor(name, releaseDate, pagesCount,) {
+    constructor(name, releaseDate, pagesCount) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.pagesCount = pagesCount;
@@ -7,20 +7,61 @@ class PrintEditionItem {
         this.type = null;
     }
     fix() {
-        return this.state = this.state * 1, 5;
+        return this.state = this.state * 1.5;
     }
-    set currentState(newState) {
-        if (this.newState < 0) {
-            this.state = 0;
+    set state(newState) {
+        if (newState < 0) {
+            this._state = 0;
         }
-        else if (this.newState > 100) {
-            this.state = 100;
+        else if (newState > 100) {
+            this._state = 100;
         } else {
-            this.state = newState;
-        };
+            this._state = newState;
+        }
     }
-    get currentState() {
-        return this.state;
+    get state() {
+        return this._state;
+    };
+}
+class Magazine extends PrintEditionItem {
+    constructor(name, releaseDate, pagesCount) {
+        super(name, releaseDate, pagesCount);
+        this.type = 'magazine';
     }
+}
 
+class Book extends PrintEditionItem {
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount);
+        this.author = author;
+        this.type = 'book';
+    }
+}
+
+class novelBook extends Book {
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount, author);
+        this.type = 'novel';
+    }
+}
+
+class NovelBook extends Book {
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount, author);
+        this.type = 'novel';
+    }
+}
+
+class FantasticBook extends Book {
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount, author);
+        this.type = 'fantastic';
+    }
+}
+
+class DetectiveBook extends Book {
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount, author);
+        this.type = 'detective';
+    }
 }
