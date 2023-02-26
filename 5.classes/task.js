@@ -81,4 +81,13 @@ class Library {
         }
         return null
     }
+    //return this.books.find(el => el[type] === value) пробовал через метод find. Все работает, только не знаю, как вернуть null подскажите пож))
+
+
+    giveBookByName(bookName) {
+        let resoultDel = null;
+        let resoultFind = this.books.findIndex(el => el[this.name] === bookName);
+        resoultDel = this.books.splice(resoultFind, 1)
+        return resoultDel
+    }
 }
