@@ -88,7 +88,7 @@ class Library {
         let findBookName = this.books.findIndex(element => element.name === bookName);
         if (findBookName != -1) {
             this.books.splice(findBookName, 1);
-            return this.books
+            return this.books[findBookName]
         }
         return null
     }
