@@ -87,7 +87,7 @@ class Library {
     giveBookByName(bookName) {
         let findBookIndex = this.books.findIndex(element => element.name === bookName);
         if (findBookIndex != -1) {
-            let findBookName = this.books.splice(findBookIndex, 1);
+            let findBookName = this.books.splice(findBookIndex, 1)[0];
             console.log(findBookName)
             return findBookName
         }
