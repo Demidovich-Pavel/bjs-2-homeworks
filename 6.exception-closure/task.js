@@ -17,11 +17,12 @@
 //  }
 // Пробовал написать два задания в одном. Не получилось))) Скажите, тактая реализация может быть? Не в рамках ДЗ, а впринципи?
 
+
 function validateCount(parsArg) {
     try {
         parseCount(parsArg)
     }
     catch (error) {
-        console.log('Невалидное значение')
+        console.log(error)
     }
 }
