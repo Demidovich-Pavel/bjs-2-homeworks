@@ -20,9 +20,10 @@
 
 function validateCount(parsArg) {
     try {
-        parseCount(parsArg)
+        return parseCount(parsArg)
     }
     catch (error) {
-        console.log(error)
+        console.log(error);
+        return error
     }
 }
