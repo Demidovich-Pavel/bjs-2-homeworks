@@ -27,3 +27,29 @@ function validateCount(parsArg) {
         return error
     }
 }
+
+
+class Triangle {
+    constructor(sideA, sideB, sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+    get perimeter() {
+        if (this.sideA + this.sideB < this.sideC || this.sideC + this.sideB < this.sideA || this.sideA + this.sideC < this.sideB) {
+            throw new Error('Треугольник с такими сторонами не существует')
+        }
+        let per = this.sideA + this.sideB + this.sideC;
+        console.log(per);
+        return per
+    }
+    get area() {
+        if (this.sideA + this.sideB < this.sideC || this.sideC + this.sideB < this.sideA || this.sideA + this.sideC < this.sideB) {
+            throw new Error('Треугольник с такими сторонами не существует')
+        }
+        let halfPer = 0.5 * (this.sideA + this.sideB + this.sideC);
+        let area = Math.sqrt(halfPer * (halfPer - this.sideA) * (halfPer - this.sideB) * (halfPer - this.sideC)).toFixed(3);
+        console.log(area);
+        return area
+    }
+}
