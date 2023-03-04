@@ -34,22 +34,28 @@ class Triangle {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
+
+        if (this.sideA + this.sideB < this.sideC ||
+            this.sideC + this.sideB < this.sideA || this.sideA
+            + this.sideC < this.sideB) {
+            throw new Error('Трsеугольник с такими сторонами не существует')
+        }
     }
     get perimeter() {
-        if (this.sideA + this.sideB < this.sideC || this.sideC + this.sideB < this.sideA || this.sideA + this.sideC < this.sideB) {
-            throw new Error('Треугольник с такими сторонами не существует')
-        }
         let per = this.sideA + this.sideB + this.sideC;
-        console.log(per);
         return per
     }
     get area() {
-        if (this.sideA + this.sideB < this.sideC || this.sideC + this.sideB < this.sideA || this.sideA + this.sideC < this.sideB) {
-            throw new Error('Треугольник с такими сторонами не существует')
-        }
         let halfPer = 0.5 * (this.sideA + this.sideB + this.sideC);
-        let area = Math.sqrt(halfPer * (halfPer - this.sideA) * (halfPer - this.sideB) * (halfPer - this.sideC)).toFixed(3);
-        console.log(area);
-        return area
+        let areatriangle = Math.sqrt(halfPer * (halfPer - this.sideA) * (halfPer - this.sideB) * (halfPer - this.sideC)).toFixed(3);
+        return areatriangle
     }
+}
+try {
+    const triangle = new Triangle(10, 11, 10);
+    console.log(triangle.perimeter)
+    console.log(triangle.area)
+}
+catch (error) {
+    console.log(error);
 }
