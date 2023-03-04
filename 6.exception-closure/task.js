@@ -1,7 +1,7 @@
 ﻿function parseCount(parsArg) {
     let parseCountVar = Number.parseFloat(parsArg);
     if (isNaN(parseCountVar)) {
-        throw new Error('Невалидное значений');
+        throw new Error('Невалидное значение');
     }
     console.log(parseCountVar);
     return Number.parseFloat(parsArg)
