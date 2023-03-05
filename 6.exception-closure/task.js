@@ -38,7 +38,7 @@ class Triangle {
         if (this.sideA + this.sideB < this.sideC ||
             this.sideC + this.sideB < this.sideA || this.sideA
             + this.sideC < this.sideB) {
-            throw new Error('Трsеугольник с такими сторонами не существует')
+            throw new Error('Треугольник с такими сторонами не существует')
         }
     }
     get perimeter() {
