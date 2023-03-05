@@ -59,3 +59,9 @@ try {
 catch (error) {
     console.log(error);
 }
+
+function getTriangle(A, B, C) {
+    return console.log({
+        sideA: A, sideB: B, sideC: C,
+    })
+}
