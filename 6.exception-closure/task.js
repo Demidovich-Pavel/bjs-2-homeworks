@@ -61,7 +61,7 @@ catch (error) {
 }
 
 function getTriangle(A, B, C) {
-    return console.log({
+    return {
         sideA: A, sideB: B, sideC: C,
-    })
+    }
 }
