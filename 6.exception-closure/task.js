@@ -47,7 +47,7 @@ class Triangle {
     }
     get area() {
         let halfPer = 0.5 * (this.sideA + this.sideB + this.sideC);
-        let areatriangle = Math.sqrt(halfPer * (halfPer - this.sideA) * (halfPer - this.sideB) * (halfPer - this.sideC)).toFixed(3);
+        let areatriangle = Number(Math.sqrt(halfPer * (halfPer - this.sideA) * (halfPer - this.sideB) * (halfPer - this.sideC)).toFixed(3));
         return areatriangle
     }
 }
@@ -60,8 +60,3 @@ catch (error) {
     console.log(error);
 }
 
-function getTriangle(A, B, C) {
-    return {
-        sideA: A, sideB: B, sideC: C,
-    }
-}
