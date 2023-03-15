@@ -51,12 +51,21 @@ class Triangle {
         return areatriangle
     }
 }
-try {
-    const triangle = new Triangle(10, 11, 10);
-    console.log(triangle.perimeter)
-    console.log(triangle.area)
-}
-catch (error) {
-    console.log(error);
+
+function getTriangle(sideA, sideB, sideC) {
+    try {
+        const triangle = new Triangle(sideA, sideB, sideC);
+        return triangle
+    } catch {
+        let newObject = {
+            get aria() {
+                return 'Ошибка! Треугольника не существует.'
+            },
+            get peremiter() {
+                return 'Ошибка! Треугольника не существует.'
+            }
+        }
+        return newObject
+    }
 }
 
