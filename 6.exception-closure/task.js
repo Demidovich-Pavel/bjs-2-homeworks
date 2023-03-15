@@ -59,10 +59,10 @@ function getTriangle(sideA, sideB, sideC) {
     } catch {
         return {
             get aria() {
-                return 'Ошибка! Треугольника не существует.'
+                return 'Ошибка! Треугольник не существует'
             },
             get peremiter() {
-                return 'Ошибка! Треугольника не существует.'
+                return 'Ошибка! Треугольник не существует'
             }
         }
     }
