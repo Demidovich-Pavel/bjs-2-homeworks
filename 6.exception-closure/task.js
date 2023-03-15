@@ -54,14 +54,15 @@ class Triangle {
 
 function getTriangle(sideA, sideB, sideC) {
     try {
-        const triangle = new Triangle(sideA, sideB, sideC);
+        let triangle = new Triangle(sideA, sideB, sideC);
+        console.log(triangle.area, triangle.perimeter)
         return triangle
     } catch {
         return {
-            get aria() {
+            get area() {
                 return 'Ошибка! Треугольник не существует'
             },
-            get peremiter() {
+            get perimeter() {
                 return 'Ошибка! Треугольник не существует'
             }
         }
