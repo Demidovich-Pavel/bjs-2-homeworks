@@ -57,7 +57,7 @@ function getTriangle(sideA, sideB, sideC) {
         const triangle = new Triangle(sideA, sideB, sideC);
         return triangle
     } catch {
-        let newObject = {
+        return {
             get aria() {
                 return 'Ошибка! Треугольника не существует.'
             },
@@ -65,7 +65,6 @@ function getTriangle(sideA, sideB, sideC) {
                 return 'Ошибка! Треугольника не существует.'
             }
         }
-        return newObject
     }
 }
 
