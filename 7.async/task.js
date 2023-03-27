@@ -12,9 +12,9 @@ class AlarmClock {
             if (this.alarmCollection[i].time === time) {
                 console.warn('Уже присутствует звонок на это же время')
             }
-            let newAlarm = { time, canCall: true, callback };
-            this.alarmCollection.push(newAlarm);
         }
+        let newAlarm = { time, canCall: true, callback };
+        this.alarmCollection.push(newAlarm);
         console.log(this.alarmCollection)
     }
     removeClock(time) {
