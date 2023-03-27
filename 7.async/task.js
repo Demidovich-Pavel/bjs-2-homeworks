@@ -3,24 +3,26 @@ class AlarmClock {
         this.alarmCollection = [];
         this.intervalId = null;
     }
+
     addClock(time, callback) {
         if (time === undefined || callback === undefined) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
-        for (let i = 0; a < this.alarmCollection.length; i++) {
+        for (let i = 0; i < this.alarmCollection.length; i++) {
             if (this.alarmCollection[i].time === time) {
                 console.warn('Уже присутствует звонок на это же время')
             }
             let newAlarm = { time, canCall: true, callback };
             this.alarmCollection.push(newAlarm);
         }
+        console.log(this.alarmCollection)
     }
     removeClock(time) {
         this.alarmCollection = this.alarmCollection.filter(item => item.time === time)
     }
     getCurrentFormattedTime() {
-        let data = new Data;
-        return data.toLocaleTimeString().slice(0, -3);
+        let data = new Date().toLocaleTimeString().slice(0, -3)
+        return data
     }
     start() {
         if (this.intervalId != null) {
@@ -28,7 +30,7 @@ class AlarmClock {
         }
         this.intervalId = setInterval(() => this.alarmCollection.forEach(element => {
             if (element.canCall === true && element.time === this.getCurrentFormattedTime()) {
-                canCall = false;
+                element.canCall = false;
                 callback();
             }
         }), 1000)
