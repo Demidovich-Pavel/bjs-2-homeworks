@@ -36,8 +36,8 @@ class AlarmClock {
         }), 1000)
     }
     stop() {
-        clearInterval(intervalId);
-        intervalId = null;
+        clearInterval(this.intervalId);
+        this.intervalId = null;
     }
     resetAllCalls() {
         this.alarmCollection.forEach(item => item.canCall = true)
