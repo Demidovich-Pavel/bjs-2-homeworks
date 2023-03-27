@@ -5,7 +5,7 @@ class AlarmClock {
     }
 
     addClock(time, callback) {
-        if (time === undefined || callback === undefined) {
+        if (time === null || callback === undefined) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
         for (let i = 0; i < this.alarmCollection.length; i++) {
