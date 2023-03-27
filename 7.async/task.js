@@ -18,7 +18,7 @@ class AlarmClock {
         console.log(this.alarmCollection)
     }
     removeClock(time) {
-        this.alarmCollection = this.alarmCollection.filter(item => item.time === time)
+        this.alarmCollection = this.alarmCollection.filter(item => item.time != time)
     }
     getCurrentFormattedTime() {
         let data = new Date().toLocaleTimeString().slice(0, -3)
@@ -31,7 +31,7 @@ class AlarmClock {
         this.intervalId = setInterval(() => this.alarmCollection.forEach(element => {
             if (element.canCall === true && element.time === this.getCurrentFormattedTime()) {
                 element.canCall = false;
-                callback();
+                element.callback();
             }
         }), 1000)
     }
